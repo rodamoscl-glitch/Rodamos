@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Rodamos.cl — Calendario de ciclismo</title>
+    <link rel="stylesheet" href="./assets/styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container topbar__inner">
+        <div class="brand">
+          <div class="brand__logo">RODAMOS</div>
+          <div class="brand__sub">Calendario de eventos de ciclismo</div>
+        </div>
+        <nav class="nav">
+          <a class="nav__link nav__link--active" href="./index.html">Calendario</a>
+          <a class="nav__link" href="./submit.html">Publica eventos</a>
+          <a class="nav__link" href="./agenda.html">Mi agenda</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <div class="layout">
+        <section class="card">
+          <div class="card__header">
+            <div>
+              <div class="card__title">Calendario Chile</div>
+              <div class="card__hint">
+                Actualización: si un evento no aparece de inmediato, espera 1–3 minutos (depende de Google Sheets).
+              </div>
+            </div>
+            <div class="pill">Ciclismo</div>
+          </div>
+
+          <div class="card__body">
+            <div class="filters">
+              <div class="field">
+                <label>Región</label>
+                <select id="filter-region">
+                  <option value="">Todas</option>
+                </select>
+              </div>
+              <div class="field">
+                <label>Tipo</label>
+                <select id="filter-type">
+                  <option value="">Todos</option>
+                </select>
+              </div>
+              <div class="field">
+                <label>Buscar</label>
+                <input id="filter-q" type="text" placeholder="Nombre / comuna" />
+              </div>
+              <div class="field">
+                <label>Desde</label>
+                <input id="filter-from" type="date" />
+              </div>
+              <div class="field">
+                <label>Hasta</label>
+                <input id="filter-to" type="date" />
+              </div>
+              <div class="field field--actions">
+                <label>&nbsp;</label>
+                <button id="btn-apply" class="btn" type="button">Filtrar</button>
+              </div>
+            </div>
+
+            <div id="status" class="alert" style="display:none"></div>
+            <div id="calendar"></div>
+          </div>
+        </section>
+
+        <aside class="aside">
+          <div class="ad">
+            <div>
+              <div class="ad__title">Publicidad</div>
+              <div class="ad__hint">Espacio reservado para banner vertical.</div>
+              <div class="ad__box">300 × 600</div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <footer class="footer container">
+      <div>© <span id="year"></span> Rodamos.cl</div>
+    </footer>
+
+    <script src="./assets/config.js"></script>
+    <script src="./assets/app.js"></script>
+  </body>
+</html>
+
